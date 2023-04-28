@@ -9,9 +9,9 @@ import {
 
 const client = twilio(TWILIO_AUTH_SID, TWILIO_AUTH_TOKEN);
 
-export async function sendSMS() {
+export async function sendText() {
   const textPromise = client.messages.create({
-    body: "found apartment!",
+    body: "found apartment",
     from: TEXT_FROM,
     to: TEXT_TO!,
   });

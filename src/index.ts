@@ -1,6 +1,6 @@
 import { chromium, devices } from "playwright";
-import { PAGE_URL } from "./config";
-import { sendSMS } from "./sms";
+import { INTERVAL_MS, PAGE_URL } from "./config";
+import { sendText } from "./text";
 
 async function main() {
   const browser = await chromium.launch();
@@ -19,12 +19,12 @@ async function main() {
   }
 
   if (flag) {
-    const messages = await sendSMS();
+    const messages = await sendText();
     console.info("sent text: ", messages[0].sid);
     console.info("sent whatsapp text: ", messages[1].sid);
     process.exit(0);
   } else {
-    console.info("not available at ", new Date().toISOString());
+    console.info("not found at ", new Date().toISOString());
   }
   
   await context.close();
@@ -35,4 +35,4 @@ main().catch(console.error);
 
 setInterval(() => {
   main().catch(console.error);
-}, 5000);
+}, parseInt(INTERVAL_MS!));
