@@ -1,0 +1,16 @@
+{
+  "name": "apt-finder",
+  "version": "0.0.1",
+  "scripts": {
+    "find": "ts-node --transpileOnly src/index.ts"
+  },
+  "devDependencies": {
+    "playwright": "^1.33.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "twilio": "^4.10.0"
+  }
+}
