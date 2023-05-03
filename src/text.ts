@@ -1,6 +1,6 @@
 import twilio from "twilio";
 import {
-    TEXT_FROM,
+  TEXT_FROM,
   TEXT_TO,
   TWILIO_AUTH_SID,
   TWILIO_AUTH_TOKEN,
